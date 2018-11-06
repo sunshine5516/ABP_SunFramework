@@ -1,0 +1,6 @@
+D:\Code\Framework\ABP\ABP_SunFramework\src\Abp.Web.Common\bin\Debug\Abp.Web.Common.dll
+D:\Code\Framework\ABP\ABP_SunFramework\src\Abp.Web.Common\bin\Debug\Abp.Web.Common.pdb
+D:\Code\Framework\ABP\ABP_SunFramework\src\Abp.Web.Common\obj\Debug\Abp.Web.Common.csprojResolveAssemblyReference.cache
+D:\Code\Framework\ABP\ABP_SunFramework\src\Abp.Web.Common\obj\Debug\Abp.Web.Common.csproj.CoreCompileInputs.cache
+D:\Code\Framework\ABP\ABP_SunFramework\src\Abp.Web.Common\obj\Debug\Abp.Web.Common.dll
+D:\Code\Framework\ABP\ABP_SunFramework\src\Abp.Web.Common\obj\Debug\Abp.Web.Common.pdb

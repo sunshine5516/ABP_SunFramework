@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3E8F8D52-353D-4A05-8D6C-42BE5E030A23}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Abp.EntityFramework</RootNamespace>
+    <AssemblyName>Abp.EntityFramework</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Castle.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Castle.Core.4.2.1\lib\net45\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Windsor, Version=4.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Castle.Windsor.4.1.0\lib\net45\Castle.Windsor.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.DynamicFilters, Version=3.0.1.0, Culture=neutral, PublicKeyToken=59b66d028979105b, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.DynamicFilters.3.0.1\lib\net40\EntityFramework.DynamicFilters.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Collections.Immutable, Version=1.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="EntityFramework\AbpDbContext.cs" />
+    <Compile Include="EntityFramework\AbpEntityFrameworkModule.cs" />
+    <Compile Include="EntityFramework\DbContextTypeMatcher.cs" />
+    <Compile Include="EntityFramework\DefaultDbContextResolver.cs" />
+    <Compile Include="EntityFramework\EfBasedSecondaryOrmRegistrar.cs" />
+    <Compile Include="EntityFramework\EfDbContextEntityFinder.cs" />
+    <Compile Include="EntityFramework\IDbContextProvider.cs" />
+    <Compile Include="EntityFramework\IDbContextResolver.cs" />
+    <Compile Include="EntityFramework\Interceptors\WithNoLockInterceptor.cs" />
+    <Compile Include="EntityFramework\Repositories\EfAutoRepositoryTypes.cs" />
+    <Compile Include="EntityFramework\Repositories\EfRepositoryBaseOfTEntity.cs" />
+    <Compile Include="EntityFramework\Repositories\EfRepositoryBaseOfTEntityAndTPrimaryKey.cs" />
+    <Compile Include="EntityFramework\Repositories\IRepositoryWithDbContext.cs" />
+    <Compile Include="EntityFramework\Unit\DateTimePropertyInfoHelper.cs" />
+    <Compile Include="EntityFramework\Unit\EntityDateTimePropertiesInfo.cs" />
+    <Compile Include="EntityFramework\Uow\ActiveTransactionInfo.cs" />
+    <Compile Include="EntityFramework\Uow\DbContextEfTransactionStrategy.cs" />
+    <Compile Include="EntityFramework\Uow\EfDynamicFiltersUnitOfWorkFilterExecuter.cs" />
+    <Compile Include="EntityFramework\Uow\EfUnitOfWork.cs" />
+    <Compile Include="EntityFramework\Uow\IEfTransactionStrategy.cs" />
+    <Compile Include="EntityFramework\Uow\IEfUnitOfWorkFilterExecuter.cs" />
+    <Compile Include="EntityFramework\Uow\TransactionScopeEfTransactionStrategy.cs" />
+    <Compile Include="EntityFramework\Uow\UnitOfWorkDbContextProvider.cs" />
+    <Compile Include="EntityFramework\Uow\UnitOfWorkExtensions.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Abp.EntityFramework.Common\Abp.EntityFramework.Common.csproj">
+      <Project>{edcc9907-a549-41af-b100-fc6faaeb79fb}</Project>
+      <Name>Abp.EntityFramework.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AbpFramework\AbpFramework.csproj">
+      <Project>{180ff5c5-d66a-4f62-8a16-be64301844f4}</Project>
+      <Name>AbpFramework</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,0 +1,30 @@
+WARN  2018-10-10 17:56:07,240 [1    ] EntityFramework.AbpEntityFrameworkModule - No class found derived from AbpDbContext.
+WARN  2018-10-10 18:11:30,723 [1    ] EntityFramework.AbpEntityFrameworkModule - No class found derived from AbpDbContext.
+WARN  2018-10-10 18:20:56,458 [1    ] EntityFramework.AbpEntityFrameworkModule - No class found derived from AbpDbContext.
+WARN  2018-10-10 18:25:52,587 [1    ] EntityFramework.AbpEntityFrameworkModule - No class found derived from AbpDbContext.
+WARN  2018-10-10 18:32:53,681 [1    ] EntityFramework.AbpEntityFrameworkModule - No class found derived from AbpDbContext.
+WARN  2018-10-11 15:44:27,187 [1    ] EntityFramework.AbpEntityFrameworkModule - No class found derived from AbpDbContext.
+WARN  2018-10-11 15:48:25,477 [1    ] EntityFramework.AbpEntityFrameworkModule - No class found derived from AbpDbContext.
+WARN  2018-10-11 15:54:47,455 [1    ] EntityFramework.AbpEntityFrameworkModule - No class found derived from AbpDbContext.
+WARN  2018-10-11 15:59:47,733 [1    ] EntityFramework.AbpEntityFrameworkModule - No class found derived from AbpDbContext.
+WARN  2018-10-11 16:05:15,830 [1    ] EntityFramework.AbpEntityFrameworkModule - No class found derived from AbpDbContext.
+WARN  2018-10-11 16:10:46,414 [1    ] EntityFramework.AbpEntityFrameworkModule - No class found derived from AbpDbContext.
+WARN  2018-10-11 16:15:55,008 [1    ] EntityFramework.AbpEntityFrameworkModule - No class found derived from AbpDbContext.
+WARN  2018-10-11 16:20:55,338 [1    ] EntityFramework.AbpEntityFrameworkModule - No class found derived from AbpDbContext.
+WARN  2018-10-11 17:50:00,573 [1    ] EntityFramework.AbpEntityFrameworkModule - No class found derived from AbpDbContext.
+WARN  2018-10-11 18:34:55,776 [1    ] EntityFramework.AbpEntityFrameworkModule - No class found derived from AbpDbContext.
+WARN  2018-10-11 18:38:44,006 [1    ] EntityFramework.AbpEntityFrameworkModule - No class found derived from AbpDbContext.
+WARN  2018-10-11 18:39:11,278 [1    ] EntityFramework.AbpEntityFrameworkModule - No class found derived from AbpDbContext.
+WARN  2018-10-15 15:35:30,459 [1    ] EntityFramework.AbpEntityFrameworkModule - No class found derived from AbpDbContext.
+WARN  2018-10-18 17:24:33,911 [1    ] EntityFramework.AbpEntityFrameworkModule - No class found derived from AbpDbContext.
+WARN  2018-10-19 17:22:45,761 [1    ] EntityFramework.AbpEntityFrameworkModule - No class found derived from AbpDbContext.
+WARN  2018-10-19 17:38:45,000 [1    ] EntityFramework.AbpEntityFrameworkModule - No class found derived from AbpDbContext.
+WARN  2018-10-19 17:40:24,524 [1    ] EntityFramework.AbpEntityFrameworkModule - No class found derived from AbpDbContext.
+WARN  2018-10-24 14:53:22,737 [1    ] EntityFramework.AbpEntityFrameworkModule - No class found derived from AbpDbContext.
+WARN  2018-10-25 15:50:18,959 [1    ] EntityFramework.AbpEntityFrameworkModule - No class found derived from AbpDbContext.
+WARN  2018-10-25 15:51:40,588 [1    ] EntityFramework.AbpEntityFrameworkModule - No class found derived from AbpDbContext.
+WARN  2018-10-25 16:04:30,835 [1    ] EntityFramework.AbpEntityFrameworkModule - No class found derived from AbpDbContext.
+WARN  2018-10-25 16:25:03,387 [1    ] EntityFramework.AbpEntityFrameworkModule - No class found derived from AbpDbContext.
+DEBUG 2018-10-25 17:51:34,718 [1    ] EntityFramework.AbpEntityFrameworkModule - Registering DbContext: AbpDemo.EntityFramework.EntityFramework.AbpDemoDbContext, AbpDemo.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-10-25 18:06:22,687 [1    ] EntityFramework.AbpEntityFrameworkModule - Registering DbContext: AbpDemo.EntityFramework.EntityFramework.AbpDemoDbContext, AbpDemo.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-10-25 18:08:26,767 [1    ] EntityFramework.AbpEntityFrameworkModule - Registering DbContext: AbpDemo.EntityFramework.EntityFramework.AbpDemoDbContext, AbpDemo.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
