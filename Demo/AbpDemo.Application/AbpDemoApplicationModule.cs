@@ -1,13 +1,9 @@
-﻿using AbpFramework.Modules;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using Abp.AutoMapper.AutoMapper;
+using AbpFramework.Modules;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace AbpDemo.Application
 {
+    [DependsOn(typeof(AbpAutoMapperModule))]
     public class AbpDemoApplicationModule : AbpModule
     {
         public override void PreInitialize()
