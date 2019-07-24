@@ -15,6 +15,15 @@ namespace AbpFramework.Runtime.Session
         #endregion
         #region 构造函数
         public static NullAbpSession Instance { get; } = new NullAbpSession();
+
+        public override long? UserId => null;
+
+        public override int? TenantId => null;
+
+        public override long? ImpersonatorUserId => null;
+
+        public override int? ImpersonatorTenantId => null;
+
         private NullAbpSession()
             : base(
                   new MultiTenancyConfig(),

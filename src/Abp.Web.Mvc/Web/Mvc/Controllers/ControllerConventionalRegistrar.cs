@@ -21,11 +21,18 @@ namespace Abp.Web.Mvc.Web.Mvc.Controllers
         /// <param name="context"></param>
         public void RegisterAssembly(IConventionalRegistrationContext context)
         {
+            //context.IocManager.IocContainer.Register(
+            //     Classes.FromAssembly(context.Assembly).
+            //       BasedOn<IController>().
+            //       If(c => c.Name.EndsWith("Controller"))
+            //       .LifestyleTransient());
             context.IocManager.IocContainer.Register(
-                 Classes.FromAssembly(context.Assembly).
-                   BasedOn<IController>().
-                   If(c => c.Name.EndsWith("Controller"))
-                   .LifestyleTransient());
+                Classes.FromAssembly(context.Assembly)
+                    .BasedOn<Controller>()
+                    .If(type => !type.GetTypeInfo().IsGenericTypeDefinition)
+                    .LifestyleTransient()
+                );
+
             //context.IocManager.IocContainer.Register(Castle.MicroKernel.Registration.Classes.FromThisAssembly()
             //    .BasedOn<IController>()
             //    .LifestylePerWebRequest()

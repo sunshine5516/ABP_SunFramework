@@ -178,12 +178,22 @@ namespace Abp.EntityFramework.EntityFramework.Repositories
 
         public override void Delete(TEntity entity)
         {
-            throw new NotImplementedException();
+            AttachIfNot(entity);
+            Table.Remove(entity);
         }
 
         public override void Delete(TPrimaryKey id)
         {
-            throw new NotImplementedException();
+            var entity=Table.Local.FirstOrDefault(ent=> EqualityComparer<TPrimaryKey>.Default.Equals(ent.Id, id));
+            if(entity==null)
+            {
+                entity = FirstOrDefault(id);
+                if (entity == null)
+                {
+                    return;
+                }
+            }
+            Delete(entity);
         }
 
         public Task EnsureCollectionLoadedAsync<TProperty>(TEntity entity,

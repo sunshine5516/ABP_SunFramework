@@ -64,7 +64,6 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\AbpFramework\AbpFramework.csproj">
       <Project>{180ff5c5-d66a-4f62-8a16-be64301844f4}</Project>

@@ -1,4 +1,6 @@
 ﻿using Abp.Configuration.Startup;
+using Abp.Web.Web;
+using Abp.WebApi.Auditing;
 using Abp.WebApi.Configuration;
 using Abp.WebApi.Controllers;
 using Abp.WebApi.Controllers.Dynamic;
@@ -9,12 +11,11 @@ using Castle.MicroKernel.Registration;
 using System.Reflection;
 using System.Web.Http;
 using System.Web.Http.Controllers;
-using System.Web.Http.Description;
 using System.Web.Http.Dispatcher;
 
 namespace Abp.Web.Api
 {
-
+    [DependsOn(typeof(AbpWebModule))]
     public class AbpWebApiModule: AbpModule
     {
         public override void PreInitialize()
@@ -35,6 +36,7 @@ namespace Abp.Web.Api
             var httpConfiguration= IocManager.Resolve<IAbpWebApiConfiguration>().HttpConfiguration;
             InitializeRoutes(httpConfiguration);
             InitializeAspNetServices(httpConfiguration);
+            InitializeFilters(httpConfiguration);
 
             foreach (var controllerInfo in IocManager.Resolve<DynamicApiControllerManager>().GetAll())
             {
@@ -85,6 +87,12 @@ namespace Abp.Web.Api
             httpConfiguration.Services.Replace(typeof(IHttpActionSelector), new AbpApiControllerActionSelector(IocManager.Resolve<IAbpWebApiConfiguration>()));
             httpConfiguration.Services.Replace(typeof(IHttpControllerActivator), new AbpApiControllerActivator(IocManager));
             //httpConfiguration.Services.Replace(typeof(IApiExplorer), IocManager.Resolve<AbpApiExplorer>());
+        }
+        private void InitializeFilters(HttpConfiguration httpConfiguration)
+        {
+            httpConfiguration.Filters.Add(IocManager.Resolve<AbpApiAuditFilter>());
+
+            httpConfiguration.MessageHandlers.Add(IocManager.Resolve<ResultWrapperHandler>());
         }
         #endregion
     }

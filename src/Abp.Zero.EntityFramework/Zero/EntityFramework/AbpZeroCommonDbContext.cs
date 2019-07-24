@@ -3,12 +3,13 @@ using Abp.Zero.Authorization.Roles;
 using Abp.Zero.Authorization.Users;
 using Abp.Zero.Common.Auditing;
 using Abp.Zero.Common.Authorization;
+using Abp.Zero.Common.Authorization.Roles;
 using Abp.Zero.Common.Authorization.Users;
+using AbpFramework.Notifications;
 using System.Data.Common;
 using System.Data.Entity;
 using System.Data.Entity.Core.Objects;
 using System.Data.Entity.Infrastructure;
-
 namespace Abp.Zero.EntityFramework
 {
     public abstract class AbpZeroCommonDbContext<TRole, TUser> : AbpDbContext
@@ -36,9 +37,42 @@ namespace Abp.Zero.EntityFramework
         /// </summary>
         public virtual IDbSet<AuditLog> AuditLogs { get; set; }
         /// <summary>
+        /// 用户权限
+        /// </summary>
+        public virtual IDbSet<UserPermissionSetting> UserPermissions { get; set; }
+        /// <summary>
         /// 权限
         /// </summary>
         public virtual IDbSet<PermissionSetting> Permissions { get; set; }
+        /// <summary>
+        /// 角色权限
+        /// </summary>
+        public virtual IDbSet<RolePermissionSetting> RolePermissions { get; set; }
+
+        public virtual IDbSet<UserClaim> UserClaims { get; set; }
+        /// <summary>
+        /// User login attempts.
+        /// </summary>
+        public virtual IDbSet<UserLoginAttempt> UserLoginAttempts { get; set; }
+        /// <summary>
+        /// Notifications.
+        /// </summary>
+        public virtual IDbSet<NotificationInfo> Notifications { get; set; }
+
+        /// <summary>
+        /// Tenant notifications.
+        /// </summary>
+        public virtual IDbSet<TenantNotificationInfo> TenantNotifications { get; set; }
+
+        /// <summary>
+        /// User notifications.
+        /// </summary>
+        public virtual IDbSet<UserNotificationInfo> UserNotifications { get; set; }
+
+        /// <summary>
+        /// Notification subscriptions.
+        /// </summary>
+        public virtual IDbSet<NotificationSubscriptionInfo> NotificationSubscriptions { get; set; }
         /// <summary>
         /// 默认构造函数
         /// Do not directly instantiate this class. Instead, use dependency injection!

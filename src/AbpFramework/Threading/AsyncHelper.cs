@@ -18,5 +18,9 @@ namespace AbpFramework.Threading
         {
             AsyncContext.Run(action);
         }
+        public static TResult RunSync<TResult>(Func<Task<TResult>> func)
+        {
+            return AsyncContext.Run(func);
+        }
     }
 }

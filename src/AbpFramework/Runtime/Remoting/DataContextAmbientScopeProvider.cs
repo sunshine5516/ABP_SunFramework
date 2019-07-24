@@ -3,11 +3,6 @@ using Castle.Core.Logging;
 using JetBrains.Annotations;
 using System;
 using System.Collections.Concurrent;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace AbpFramework.Runtime.Remoting
 {
     public class DataContextAmbientScopeProvider<T> : IAmbientScopeProvider<T>

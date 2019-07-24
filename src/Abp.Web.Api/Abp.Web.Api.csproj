@@ -31,14 +31,13 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Castle.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Castle.Core.4.2.0\lib\net45\Castle.Core.dll</HintPath>
+      <HintPath>..\..\packages\Castle.Core.4.2.1\lib\net45\Castle.Core.dll</HintPath>
     </Reference>
     <Reference Include="Castle.Windsor, Version=4.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Castle.Windsor.4.1.0\lib\net45\Castle.Windsor.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Collections.Immutable, Version=1.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
@@ -64,6 +63,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Configuration\Startup\AbpWebApiConfigurationExtensions.cs" />
+    <Compile Include="WebApi\Auditing\AbpApiAuditFilter.cs" />
     <Compile Include="WebApi\Configuration\AbpWebApiConfiguration.cs" />
     <Compile Include="WebApi\Configuration\IAbpWebApiConfiguration.cs" />
     <Compile Include="WebApi\Controllers\AbpApiController.cs" />
@@ -86,18 +86,34 @@
     <Compile Include="WebApi\Controllers\Dynamic\DynamicApiControllerInfo.cs" />
     <Compile Include="WebApi\Controllers\Dynamic\DynamicApiControllerManager.cs" />
     <Compile Include="WebApi\Controllers\Dynamic\DynamicApiMethodInfo.cs" />
+    <Compile Include="WebApi\Controllers\Dynamic\Formatters\PlainTextFormatter.cs" />
     <Compile Include="WebApi\Controllers\Dynamic\IDynamicApiController.cs" />
     <Compile Include="WebApi\Controllers\Dynamic\Interceptors\AbpDynamicApiControllerInterceptor.cs" />
+    <Compile Include="WebApi\Controllers\Dynamic\Scripting\AbpServiceProxiesController.cs" />
+    <Compile Include="WebApi\Controllers\Dynamic\Scripting\ActionScriptingHelper.cs" />
+    <Compile Include="WebApi\Controllers\Dynamic\Scripting\Angular\AngularActionScriptWriter.cs" />
+    <Compile Include="WebApi\Controllers\Dynamic\Scripting\Angular\AngularProxyGenerator.cs" />
+    <Compile Include="WebApi\Controllers\Dynamic\Scripting\IScriptProxyGenerator.cs" />
+    <Compile Include="WebApi\Controllers\Dynamic\Scripting\jQuery\JQueryActionScriptGenerator.cs" />
+    <Compile Include="WebApi\Controllers\Dynamic\Scripting\jQuery\JQueryProxyGenerator.cs" />
+    <Compile Include="WebApi\Controllers\Dynamic\Scripting\ProxyScriptType.cs" />
+    <Compile Include="WebApi\Controllers\Dynamic\Scripting\ScriptProxyManager.cs" />
     <Compile Include="WebApi\Controllers\Dynamic\Selectors\AbpApiControllerActionSelector.cs" />
     <Compile Include="WebApi\Controllers\Dynamic\Selectors\AbpHttpControllerSelector.cs" />
     <Compile Include="WebApi\Controllers\Dynamic\Selectors\DynamicHttpActionDescriptor.cs" />
     <Compile Include="WebApi\Controllers\Dynamic\Selectors\DynamicHttpControllerDescriptor.cs" />
     <Compile Include="WebApi\Controllers\Dynamic\Selectors\HttpVerbExtensions.cs" />
+    <Compile Include="WebApi\Controllers\ResultWrapperHandler.cs" />
+    <Compile Include="WebApi\Validation\ActionDescriptorExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Abp.Web.Common\Abp.Web.Common.csproj">
       <Project>{d97537b7-d54c-4b37-aa8e-a6772f652073}</Project>
       <Name>Abp.Web.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Abp.Web\Abp.Web.csproj">
+      <Project>{d37785fb-2c24-4447-8271-0a3b3754d48e}</Project>
+      <Name>Abp.Web</Name>
     </ProjectReference>
     <ProjectReference Include="..\AbpFramework\AbpFramework.csproj">
       <Project>{180ff5c5-d66a-4f62-8a16-be64301844f4}</Project>
@@ -105,9 +121,11 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="ClassDiagram1.cd" />
     <None Include="ClassDiagram2.cd" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

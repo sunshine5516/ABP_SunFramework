@@ -50,6 +50,7 @@ namespace Abp.AutoMapper.AutoMapper
                 {
                     if (!_createdMappingsBefore)
                     {
+                        //
                         Mapper.Initialize(configurer);
                         _createdMappingsBefore = true;
                     }

@@ -2,13 +2,7 @@
 using AbpFramework.Dependency;
 using Castle.Core;
 using Castle.MicroKernel;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace AbpFramework.Runtime.Validation.Interception
 {
     internal static class ValidationInterceptorRegistrar

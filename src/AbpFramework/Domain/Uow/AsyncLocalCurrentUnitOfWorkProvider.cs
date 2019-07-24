@@ -1,12 +1,6 @@
 ﻿using AbpFramework.Dependency;
 using Castle.Core;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
-
 namespace AbpFramework.Domain.Uow
 {
     /// <summary>
@@ -49,7 +43,7 @@ namespace AbpFramework.Domain.Uow
         {
             lock (AsyncLocalUow)
             {
-                if (value == null)
+                if (value == null)//如果在set的时候设置为null，便表示要退出当前工作单元
                 {
                     if (AsyncLocalUow.Value == null)
                     {

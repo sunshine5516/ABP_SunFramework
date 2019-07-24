@@ -1,5 +1,7 @@
 ﻿using Abp.Zero.Common.Zero;
 using AbpFramework.Modules;
+using System.Reflection;
+
 namespace Abp.Zero.Zero
 {
     [DependsOn(typeof(AbpZeroCommonModule))]
@@ -11,7 +13,7 @@ namespace Abp.Zero.Zero
         }
         public override void Initialize()
         {
-            base.Initialize();
+            IocManager.RegisterAssemblyByConvention(Assembly.GetExecutingAssembly());
         }
     }
 }

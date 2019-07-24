@@ -1,13 +1,10 @@
 ﻿using AbpFramework.Auditing;
+using AbpFramework.BackgroundJobs;
 using AbpFramework.Dependency;
 using AbpFramework.Domain.Uow;
+using AbpFramework.Notifications;
 using AbpFramework.Runtime.Caching.Configuration;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace AbpFramework.Configuration.Startup
 {
     public interface IAbpStartupConfiguration: IDictionaryBasedConfig
@@ -43,5 +40,30 @@ namespace AbpFramework.Configuration.Startup
         /// 审计配置
         /// </summary>
         IAuditingConfiguration Auditing { get; }
-    } 
+        /// <summary>
+        /// 设置配置.
+        /// </summary>
+        ISettingsConfiguration Settings { get; }
+        /// <summary>
+        /// 导航配置.
+        /// </summary>
+        INavigationConfiguration Navigation { get; }
+        IMultiTenancyConfig MultiTenancy { get; }
+        /// <summary>
+        /// 权限配置
+        /// </summary>
+        IAuthorizationConfiguration Authorization { get; }
+        /// <summary>
+        /// 后台工作配置
+        /// </summary>
+        IBackgroundJobConfiguration BackgroundJobs { get; }
+        /// <summary>
+        /// 事件总成配置
+        /// </summary>
+        IEventBusConfiguration EventBus { get; }
+        /// <summary>
+        /// 系统通知配置
+        /// </summary>
+        INotificationConfiguration Notifications { get; }
+    }
 }

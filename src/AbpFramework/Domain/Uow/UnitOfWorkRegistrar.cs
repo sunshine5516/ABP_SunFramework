@@ -22,6 +22,7 @@ namespace AbpFramework.Domain.Uow
         }
         private static void HandleTypesWithUnitOfWorkAttribute(TypeInfo implementationType, IHandler handler)
         {
+            //判断如果是被标识了UnitOfWork attribute的就注册动态代理
             if (IsUnitOfWorkType(implementationType) || AnyMethodHasUnitOfWork(implementationType))
             {
                 handler.ComponentModel.Interceptors.Add(new InterceptorReference(typeof(UnitOfWorkInterceptor)));
@@ -35,7 +36,7 @@ namespace AbpFramework.Domain.Uow
             }
 
             var uowOptions = iocManager.Resolve<IUnitOfWorkDefaultOptions>();
-
+            //判断如果是IRepository和IApplicationService，就注册动态代理 Intercept all methods of all repositories.
             if (uowOptions.IsConventionalUowClass(implementationType.AsType()))
             {
                 handler.ComponentModel.Interceptors.Add(new InterceptorReference(typeof(UnitOfWorkInterceptor)));

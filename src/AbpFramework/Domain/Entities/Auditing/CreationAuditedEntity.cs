@@ -24,6 +24,10 @@ namespace AbpFramework.Domain.Entities.Auditing
         /// 创建时间
         /// </summary>
         public DateTime CreationTime { get; set; }
+        protected CreationAuditedEntity()
+        {
+            CreationTime = DateTime.Now;
+        }
     }
     /// <summary>
     /// 这个类可以用来简化实现 <see cref="ICreationAudited{TUser}"/>.

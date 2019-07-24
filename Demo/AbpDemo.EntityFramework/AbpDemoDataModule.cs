@@ -1,4 +1,5 @@
 ﻿using Abp.Zero.EntityFramework;
+using AbpDemo.Core;
 using AbpDemo.EntityFramework.EntityFramework;
 using AbpFramework.Modules;
 using System.Data.Entity;
@@ -6,7 +7,7 @@ using System.Reflection;
 
 namespace AbpDemo.EntityFramework
 {
-    [DependsOn(typeof(AbpZeroEntityFrameworkModule))]
+    [DependsOn(typeof(AbpZeroEntityFrameworkModule), typeof(AbpDemoCoreModule))]
     public class AbpDemoDataModule : AbpModule
     {
         public override void PreInitialize()

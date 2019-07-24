@@ -40,6 +40,12 @@ namespace AbpFramework.Domain.Repositories
         /// <param name="predicate">过滤条件</param>
         /// <returns>实体集合</returns>
         Task<List<TEntity>> GetAllListAsync(Expression<Func<TEntity, bool>> predicate);
+
+        /// <summary>
+        /// 获取所有实体
+        /// </summary>
+        /// <returns>实体集合</returns>
+        Task<List<TEntity>> GetAllListAsync();
         /// <summary>
         /// 对整个实体运行查询
         /// </summary>

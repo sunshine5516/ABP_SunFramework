@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace AbpFramework.Domain.Entities
+﻿namespace AbpFramework.Domain.Entities
 {
     /// <summary>
     /// 定义基本实体类型接口，所有实体需要继承该接口

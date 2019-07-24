@@ -47,22 +47,46 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Application\Editions\AbpEditionManager.cs" />
     <Compile Include="Application\Editions\Edition.cs" />
     <Compile Include="Auditing\AuditingStore.cs" />
     <Compile Include="Auditing\AuditLog.cs" />
+    <Compile Include="Authorization\AbpLoginResultType.cs" />
+    <Compile Include="Authorization\PermissionGrantInfo.cs" />
     <Compile Include="Authorization\PermissionSetting.cs" />
     <Compile Include="Authorization\Roles\AbpRoleBase.cs" />
+    <Compile Include="Authorization\Roles\IRolePermissionStore.cs" />
+    <Compile Include="Authorization\Roles\PermissionEqualityComparer.cs" />
+    <Compile Include="Authorization\Roles\RolePermissionCacheItem.cs" />
     <Compile Include="Authorization\Roles\RolePermissionSetting.cs" />
     <Compile Include="Authorization\Users\AbpUserBase.cs" />
+    <Compile Include="Authorization\Users\DefaultExternalAuthenticationSource.cs" />
+    <Compile Include="Authorization\Users\IExternalAuthenticationSource.cs" />
+    <Compile Include="Authorization\Users\IUserPermissionStore.cs" />
     <Compile Include="Authorization\Users\UserClaim.cs" />
     <Compile Include="Authorization\Users\UserLogin.cs" />
+    <Compile Include="Authorization\Users\UserLoginAttempt.cs" />
+    <Compile Include="Authorization\Users\UserPermissionCacheItem.cs" />
     <Compile Include="Authorization\Users\UserPermissionSetting.cs" />
     <Compile Include="Authorization\Users\UserRole.cs" />
+    <Compile Include="BackgroundJobs\BackgroundJobStore.cs" />
     <Compile Include="Configuration\Setting.cs" />
+    <Compile Include="Configuration\SettingExtensions.cs" />
+    <Compile Include="Configuration\SettingStore.cs" />
     <Compile Include="MultiTenancy\AbpTenant.cs" />
     <Compile Include="MultiTenancy\AbpTenantBase.cs" />
+    <Compile Include="MultiTenancy\AbpTenantManager.cs" />
+    <Compile Include="Notifications\NotificationStore.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Runtime\Caching\AbpZeroCacheManagerExtensions.cs" />
     <Compile Include="Zero\AbpZeroCommonModule.cs" />
+    <Compile Include="Zero\Configuration\AbpZeroSettingNames.cs" />
+    <Compile Include="Zero\Configuration\AbpZeroSettingProvider.cs" />
+    <Compile Include="Zero\Configuration\IRoleManagementConfig.cs" />
+    <Compile Include="Zero\Configuration\IUserManagementConfig.cs" />
+    <Compile Include="Zero\Configuration\RoleManagementConfig.cs" />
+    <Compile Include="Zero\Configuration\StaticRoleDefinition.cs" />
+    <Compile Include="Zero\Configuration\UserManagementConfig.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -5,6 +5,8 @@ using AbpFramework.Extensions;
 using System.Linq;
 using System.Linq.Dynamic.Core;
 using AbpFramework.Linq.Extensions;
+using AbpFramework.Authorization;
+
 namespace AbpFramework.Application.Services
 {
     /// <summary>
@@ -95,6 +97,37 @@ namespace AbpFramework.Application.Services
         protected virtual void MapToEntity(TUpdateInput updateInput, TEntity entity)
         {
             ObjectMapper.Map(updateInput, entity);
+        }
+        protected virtual void CheckPermission(string permissionName)
+        {
+            if(!string.IsNullOrEmpty(permissionName))
+            {
+                PermissionChecker.Authorize(permissionName);
+            }
+        }
+        protected virtual void CheckGetPermission()
+        {
+            CheckPermission(GetPermissionName);
+        }
+
+        protected virtual void CheckGetAllPermission()
+        {
+            CheckPermission(GetAllPermissionName);
+        }
+
+        protected virtual void CheckCreatePermission()
+        {
+            CheckPermission(CreatePermissionName);
+        }
+
+        protected virtual void CheckUpdatePermission()
+        {
+            CheckPermission(UpdatePermissionName);
+        }
+
+        protected virtual void CheckDeletePermission()
+        {
+            CheckPermission(DeletePermissionName);
         }
         #endregion
     }

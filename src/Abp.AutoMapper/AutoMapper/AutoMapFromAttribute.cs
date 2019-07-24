@@ -1,7 +1,6 @@
 ﻿using System;
 using AbpFramework.Collections.Extensions;
 using AutoMapper;
-
 namespace Abp.AutoMapper.AutoMapper
 {
     public class AutoMapFromAttribute : AutoMapAttributeBase
@@ -19,6 +18,7 @@ namespace Abp.AutoMapper.AutoMapper
         {
             MemberList = memberList;
         }
+
         public override void CreateMap(IMapperConfigurationExpression configuration, Type type)
         {
             if (TargetTypes.IsNullOrEmpty())

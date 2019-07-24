@@ -73,22 +73,26 @@ namespace AbpFramework.Dependency
 
         public T[] ResolveAll<T>()
         {
-            throw new NotImplementedException();
+            return ResolveAll(typeof(T)).OfType<T>().ToArray();
         }
 
         public T[] ResolveAll<T>(object argumentsAsAnonymousType)
         {
-            throw new NotImplementedException();
+            return ResolveAll(typeof(T), argumentsAsAnonymousType).OfType<T>().ToArray();
         }
 
         public object[] ResolveAll(Type type)
         {
-            throw new NotImplementedException();
+            return ResolveAll(type, null);
         }
 
         public object[] ResolveAll(Type type, object argumentsAsAnonymousType)
         {
-            throw new NotImplementedException();
+            var resolvedObjects = argumentsAsAnonymousType != null
+                ? _iocResolver.ResolveAll(type, argumentsAsAnonymousType)
+                : _iocResolver.ResolveAll(type);
+            _resolvedObjects.AddRange(resolvedObjects);
+            return resolvedObjects;
         }
     }
 }

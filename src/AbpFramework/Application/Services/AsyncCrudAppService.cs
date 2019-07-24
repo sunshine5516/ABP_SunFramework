@@ -2,7 +2,6 @@
 using AbpFramework.Domain.Entities;
 using AbpFramework.Domain.Repositories;
 using AbpFramework.Linq;
-using System;
 using System.Linq;
 using System.Threading.Tasks;
 namespace AbpFramework.Application.Services
@@ -121,10 +120,11 @@ namespace AbpFramework.Application.Services
         public virtual async Task<TEntityDto> Get(TGetInput input)
         {
             var entity = await GetEntityByIdAsync(input.Id);
+            var temp= MapToEntityDto(entity);
             return MapToEntityDto(entity);
         }
 
-        public virtual async Task<PagedResultDto<TEntityDto>> GetAll(TGetAllInput input)
+        public virtual async Task<PagedResultDto<TEntityDto>> GetAllAsync(TGetAllInput input)
         {
             var query= CreateFilteredQuery(input);
             var totalCount = await AsyncQueryableExecuter.CountAsync(query);

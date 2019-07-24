@@ -30,6 +30,7 @@ namespace AbpFramework.Modules
         protected AbpModule()
         {
             //IocManager = Dependency.IocManager.Instance;
+            Logger = NullLogger.Instance;
         }
 
         /// <summary>

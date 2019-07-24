@@ -1,6 +1,10 @@
 ﻿using Abp.EntityFramework.EntityFramework;
 using Abp.Zero.Zero;
+using AbpFramework.Domain.Uow;
 using AbpFramework.Modules;
+using Castle.MicroKernel.Registration;
+using System.Reflection;
+
 namespace Abp.Zero.EntityFramework
 {
     /// <summary>
@@ -11,11 +15,18 @@ namespace Abp.Zero.EntityFramework
     {
         public override void PreInitialize()
         {
-            base.PreInitialize();
+            Configuration.ReplaceService(typeof(IConnectionStringResolver), () =>
+            {
+                //IocManager.IocContainer.Register(
+                //    Component.For<IConnectionStringResolver, IDbPerTenantConnectionStringResolver>()
+                //        .ImplementedBy<DbPerTenantConnectionStringResolver>()
+                //        .LifestyleTransient()
+                //    );
+            });
         }
         public override void Initialize()
         {
-            base.Initialize();
+            IocManager.RegisterAssemblyByConvention(Assembly.GetExecutingAssembly());
         }
     }
 }

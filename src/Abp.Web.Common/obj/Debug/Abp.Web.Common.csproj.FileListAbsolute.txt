@@ -4,3 +4,15 @@ D:\Code\Framework\ABP\ABP_SunFramework\src\Abp.Web.Common\obj\Debug\Abp.Web.Comm
 D:\Code\Framework\ABP\ABP_SunFramework\src\Abp.Web.Common\obj\Debug\Abp.Web.Common.csproj.CoreCompileInputs.cache
 D:\Code\Framework\ABP\ABP_SunFramework\src\Abp.Web.Common\obj\Debug\Abp.Web.Common.dll
 D:\Code\Framework\ABP\ABP_SunFramework\src\Abp.Web.Common\obj\Debug\Abp.Web.Common.pdb
+F:\Demo\开源框架\ABP\标准类库备份\ABP_SunFramework\src\Abp.Web.Common\bin\Debug\Abp.Web.Common.dll
+F:\Demo\开源框架\ABP\标准类库备份\ABP_SunFramework\src\Abp.Web.Common\bin\Debug\Abp.Web.Common.pdb
+F:\Demo\开源框架\ABP\标准类库备份\ABP_SunFramework\src\Abp.Web.Common\obj\Debug\Abp.Web.Common.csprojAssemblyReference.cache
+F:\Demo\开源框架\ABP\标准类库备份\ABP_SunFramework\src\Abp.Web.Common\obj\Debug\Abp.Web.Common.csproj.CoreCompileInputs.cache
+F:\Demo\开源框架\ABP\标准类库备份\ABP_SunFramework\src\Abp.Web.Common\obj\Debug\Abp.Web.Common.dll
+F:\Demo\开源框架\ABP\标准类库备份\ABP_SunFramework\src\Abp.Web.Common\obj\Debug\Abp.Web.Common.pdb
+F:\Demo\开源框架\ABP\ABP_SunFramework\src\Abp.Web.Common\bin\Debug\Abp.Web.Common.dll
+F:\Demo\开源框架\ABP\ABP_SunFramework\src\Abp.Web.Common\bin\Debug\Abp.Web.Common.pdb
+F:\Demo\开源框架\ABP\ABP_SunFramework\src\Abp.Web.Common\obj\Debug\Abp.Web.Common.csproj.CoreCompileInputs.cache
+F:\Demo\开源框架\ABP\ABP_SunFramework\src\Abp.Web.Common\obj\Debug\Abp.Web.Common.dll
+F:\Demo\开源框架\ABP\ABP_SunFramework\src\Abp.Web.Common\obj\Debug\Abp.Web.Common.pdb
+F:\Demo\开源框架\ABP\ABP_SunFramework\src\Abp.Web.Common\obj\Debug\Abp.Web.Common.csprojAssemblyReference.cache

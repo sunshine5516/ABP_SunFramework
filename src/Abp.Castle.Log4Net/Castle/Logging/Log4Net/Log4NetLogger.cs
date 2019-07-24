@@ -1,13 +1,8 @@
-﻿using Castle.Core.Logging;
-using log4net;
+﻿using log4net;
 using log4net.Core;
 using log4net.Util;
 using System;
-using System.Collections.Generic;
 using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using ILogger = Castle.Core.Logging.ILogger;
 namespace Abp.Castle.Logging.Log4Net
 {

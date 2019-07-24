@@ -2,6 +2,7 @@
 using Abp.Zero.Authorization.Roles;
 using Abp.Zero.Authorization.Users;
 using Abp.Zero.Common.Application.Editions;
+using AbpFramework.BackgroundJobs;
 using System.Data.Common;
 using System.Data.Entity;
 using System.Data.Entity.Core.Objects;
@@ -20,6 +21,7 @@ namespace Abp.Zero.EntityFramework
     {
         public virtual IDbSet<TTenant> Tenants { get; set; }
         public virtual IDbSet<Edition> Editions { get; set; }
+        public virtual IDbSet<BackgroundJobInfo> BackgroundJobs { get; set; }
         protected AbpZeroDbContext()
         { }
         protected AbpZeroDbContext(string nameOrConnectionString)

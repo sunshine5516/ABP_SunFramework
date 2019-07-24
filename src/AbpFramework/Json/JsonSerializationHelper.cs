@@ -27,15 +27,15 @@ namespace AbpFramework.Json
         /// </summary>
         public static string SerializeWithType(object obj, Type type)
         {
-            //var serialized = obj.ToJsonString();
+            var serialized = obj.ToJsonString();
 
-            //return string.Format(
-            //    "{0}{1}{2}",
-            //    type.AssemblyQualifiedName,
-            //    TypeSeperator,
-            //    serialized
-            //    );
-            return "";
+            return string.Format(
+                "{0}{1}{2}",
+                type.AssemblyQualifiedName,
+                TypeSeperator,
+                serialized
+                );
+            //return "";
         }
 
         /// <summary>

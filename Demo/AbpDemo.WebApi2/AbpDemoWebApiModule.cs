@@ -1,7 +1,6 @@
 ﻿using Abp.Configuration.Startup;
 using Abp.Web.Api;
 using AbpDemo.Application;
-using AbpDemo.Application.Test;
 using AbpFramework.Application.Services;
 using AbpFramework.Modules;
 using System.Reflection;

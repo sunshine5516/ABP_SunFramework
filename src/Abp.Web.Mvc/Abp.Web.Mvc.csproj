@@ -70,11 +70,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Web\Mvc\AbpWebMvcModule.cs" />
+    <Compile Include="Web\Mvc\Authorization\AbpMvcAuthorizeAttribute.cs" />
+    <Compile Include="Web\Mvc\Configuration\AbpMvcConfiguration.cs" />
+    <Compile Include="Web\Mvc\Configuration\IAbpMvcConfiguration.cs" />
+    <Compile Include="Web\Mvc\Controllers\AbpAppViewController.cs" />
     <Compile Include="Web\Mvc\Controllers\AbpController.cs" />
+    <Compile Include="Web\Mvc\Controllers\AbpScriptsController.cs" />
     <Compile Include="Web\Mvc\Controllers\ControllerConventionalRegistrar.cs" />
+    <Compile Include="Web\Mvc\Controllers\Results\AbpJsonResult.cs" />
     <Compile Include="Web\Mvc\Controllers\WindsorControllerFactory.cs" />
+    <Compile Include="Web\Mvc\Extensions\ActionDescriptorExtensions.cs" />
+    <Compile Include="Web\Mvc\Extensions\HtmlHelperResourceExtensions.cs" />
+    <Compile Include="Web\Mvc\Helpers\MethodInfoHelper.cs" />
+    <Compile Include="Web\Mvc\Resources\WebResourceHelper.cs" />
+    <Compile Include="Web\Mvc\Security\AntiForgery\AbpAntiForgeryMvcFilter.cs" />
+    <Compile Include="Web\Mvc\Views\AbpWebViewPage.cs" />
+    <Compile Include="Web\Mvc\Views\AbpWebViewPageOfTModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

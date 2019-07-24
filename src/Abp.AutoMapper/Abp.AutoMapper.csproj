@@ -34,10 +34,13 @@
       <HintPath>..\..\packages\AutoMapper.6.2.1\lib\net45\AutoMapper.dll</HintPath>
     </Reference>
     <Reference Include="Castle.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Castle.Core.4.2.0\lib\net45\Castle.Core.dll</HintPath>
+      <HintPath>..\..\packages\Castle.Core.4.2.1\lib\net45\Castle.Core.dll</HintPath>
     </Reference>
     <Reference Include="Castle.Windsor, Version=4.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Castle.Windsor.4.1.0\lib\net45\Castle.Windsor.dll</HintPath>
+    </Reference>
+    <Reference Include="JetBrains.Annotations, Version=11.1.0.0, Culture=neutral, PublicKeyToken=1010a0d8d6380325, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\JetBrains.Annotations.11.1.0\lib\net20\JetBrains.Annotations.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
@@ -58,6 +61,7 @@
     <Compile Include="AutoMapper\AbpAutoMapperModule.cs" />
     <Compile Include="AutoMapper\AutoMapAttribute.cs" />
     <Compile Include="AutoMapper\AutoMapAttributeBase.cs" />
+    <Compile Include="AutoMapper\AutoMapExtensions.cs" />
     <Compile Include="AutoMapper\AutoMapFromAttribute.cs" />
     <Compile Include="AutoMapper\AutoMapperConfigurationExtensions.cs" />
     <Compile Include="AutoMapper\AutoMapperObjectMapper.cs" />
@@ -66,13 +70,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\AbpFramework\AbpFramework.csproj">
       <Project>{180ff5c5-d66a-4f62-8a16-be64301844f4}</Project>
       <Name>AbpFramework</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

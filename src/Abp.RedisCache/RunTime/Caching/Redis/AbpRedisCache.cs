@@ -1,11 +1,6 @@
 ﻿using AbpFramework.Runtime.Caching;
 using StackExchange.Redis;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace Abp.RedisCache.RunTime.Caching.Redis
 {
     public class AbpRedisCache : CacheBase
@@ -43,6 +38,8 @@ namespace Abp.RedisCache.RunTime.Caching.Redis
         public override void Set(string key, object value, TimeSpan? slidingExpireTime = null, TimeSpan? absoluteExpireTime = null)
         {
             var type = value.GetType();
+            var t = GetLocalizedKey(key);
+            var k = Serialize(value, type);
             _database.StringSet(
                 GetLocalizedKey(key),
                 Serialize(value, type),
@@ -60,6 +57,7 @@ namespace Abp.RedisCache.RunTime.Caching.Redis
 
         protected virtual string GetLocalizedKey(string key)
         {
+            var temp= "n:" + Name + ",c:" + key;
             return "n:" + Name + ",c:" + key;
         }
         #endregion

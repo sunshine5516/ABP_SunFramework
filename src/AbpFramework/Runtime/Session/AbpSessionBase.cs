@@ -1,23 +1,22 @@
 ﻿using System;
 using AbpFramework.Configuration.Startup;
 using AbpFramework.MultiTenancy;
-
 namespace AbpFramework.Runtime.Session
 {
     public abstract class AbpSessionBase : IAbpSession
     {
         public const string SessionOverrideContextKey = "Abp.Runtime.Session.Override";
         #region 实例
-        public long? UserId { get; }
+        public abstract long? UserId { get; }
 
-        public int? TenantId { get; }
+        public abstract int? TenantId { get; }
         public IMultiTenancyConfig MultiTenancy { get; }
 
        
 
-        public long? ImpersonatorUserId { get; }
+        public abstract long? ImpersonatorUserId { get; }
 
-        public int? ImpersonatorTenantId { get; }
+        public abstract int? ImpersonatorTenantId { get; }
         public MultiTenancySides MultiTenancySide
         {
             get

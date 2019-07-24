@@ -1,5 +1,4 @@
-﻿using System;
-using System.Data.Entity;
+﻿using System.Data.Entity;
 using AbpFramework.Domain.Uow;
 using AbpFramework.MultiTenancy;
 namespace Abp.EntityFramework.EntityFramework.Uow

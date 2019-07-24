@@ -46,7 +46,7 @@ namespace AbpFramework.Application.Services
         where TDeleteInput : IEntityDto<TPrimaryKey>
     {
         Task<TEntityDto> Get(TGetInput input);
-        Task<PagedResultDto<TEntityDto>> GetAll(TGetAllInput input);
+        Task<PagedResultDto<TEntityDto>> GetAllAsync(TGetAllInput input);
         Task<TEntityDto> Create(TCreateInput input);
         Task<TEntityDto> Update(TUpdateInput input);
         Task Delete(TDeleteInput input);

@@ -1,5 +1,7 @@
-﻿using AbpFramework.Domain.Uow;
+﻿using AbpFramework.Configuration;
+using AbpFramework.Domain.Uow;
 using AbpFramework.ObjectMapping;
+using Castle.Core.Logging;
 
 namespace AbpFramework
 {
@@ -11,6 +13,8 @@ namespace AbpFramework
     {
         #region 声明实例
         private IUnitOfWorkManager _unitOfWorkManager;
+        public ILogger Logger { protected get; set; }
+        public ISettingManager SettingManager { get; set; }
         public IUnitOfWorkManager UnitOfWorkManager
         {
             get
@@ -31,7 +35,11 @@ namespace AbpFramework
         public IObjectMapper ObjectMapper { get; set; }
         #endregion
         #region 构造函数
-
+        protected AbpServiceBase()
+        {
+            Logger = NullLogger.Instance;
+            ObjectMapper = NullObjectMapper.Instance;
+        }
         #endregion
         #region 方法
 

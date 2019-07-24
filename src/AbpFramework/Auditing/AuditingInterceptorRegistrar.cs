@@ -3,7 +3,6 @@ using Castle.Core;
 using System;
 using System.Linq;
 using System.Reflection;
-
 namespace AbpFramework.Auditing
 {
     /// <summary>
@@ -14,7 +13,7 @@ namespace AbpFramework.Auditing
         public static void Initialize(IIocManager iocManager)
         {
             iocManager.IocContainer.Kernel.ComponentRegistered += (key, handler) =>
-              {
+              {                  
                   if (!iocManager.IsRegistered<IAuditingConfiguration>())
                   {
                       return;

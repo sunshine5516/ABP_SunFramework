@@ -14,7 +14,6 @@ using Abp.EntityFramework.Common.Repositories;
 using Abp.EntityFramework.EntityFramework.Repositories;
 using System;
 using AbpFramework.Orm;
-
 namespace Abp.EntityFramework.EntityFramework
 {
     /// <summary>

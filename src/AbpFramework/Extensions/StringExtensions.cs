@@ -138,5 +138,52 @@ namespace AbpFramework.Extensions
 
             return str.Left(maxLength);
         }
+        /// <summary>
+        /// 字符串末尾添加字符
+        /// </summary>
+        public static string EnsureEndsWith(this string str, char c)
+        {
+            return EnsureEndsWith(str, c, StringComparison.Ordinal);
+        }
+        public static string EnsureEndsWith(this string str, char c, StringComparison comparisonType)
+        {
+            if (str == null)
+            {
+                throw new ArgumentNullException(nameof(str));
+            }
+
+            if (str.EndsWith(c.ToString(), comparisonType))
+            {
+                return str;
+            }
+
+            return str + c;
+        }
+        /// <summary>
+        /// 如果不以指定字符串开头，则将char添加到给定字符串的开头。
+        /// </summary>
+        public static string EnsureStartsWith(this string str, char c)
+        {
+            return EnsureStartsWith(str, c, StringComparison.Ordinal);
+        }
+
+        /// <summary>
+        /// 如果不以指定字符串开头，则将char添加到给定字符串的开头。
+        /// </summary>
+        public static string EnsureStartsWith(this string str, char c, StringComparison comparisonType)
+        {
+            if (str == null)
+            {
+                throw new ArgumentNullException(nameof(str));
+            }
+
+            if (str.StartsWith(c.ToString(), comparisonType))
+            {
+                return str;
+            }
+
+            return c + str;
+        }
+
     }
 }

@@ -2,7 +2,6 @@
 using AutoMapper;
 using System;
 using System.Reflection;
-
 namespace Abp.AutoMapper.AutoMapper
 {
     internal static class AutoMapperConfigurationExtensions

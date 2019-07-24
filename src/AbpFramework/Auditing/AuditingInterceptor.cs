@@ -4,7 +4,6 @@ using Castle.DynamicProxy;
 using System;
 using System.Diagnostics;
 using System.Threading.Tasks;
-
 namespace AbpFramework.Auditing
 {
     public class AuditingInterceptor : IInterceptor

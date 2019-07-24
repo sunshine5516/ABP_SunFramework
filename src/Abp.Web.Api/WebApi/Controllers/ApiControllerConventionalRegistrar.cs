@@ -1,13 +1,7 @@
 ﻿using AbpFramework.Dependency;
 using Castle.MicroKernel.Registration;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using System.Web.Http;
-
 namespace Abp.WebApi.Controllers
 {
     /// <summary>
@@ -17,13 +11,20 @@ namespace Abp.WebApi.Controllers
     {
         public void RegisterAssembly(IConventionalRegistrationContext context)
         {
-            context.IocManager.IocContainer.Register(
-                Classes.FromAssembly(context.Assembly)
+            //context.IocManager.IocContainer.Register(
+            //    Classes.FromAssembly(context.Assembly)
+            //    .BasedOn<ApiController>()
+            //    .If(type => !type.GetTypeInfo().IsGenericTypeDefinition)
+            //        .LifestyleTransient()
+            //    );
+
+            var t = Classes.FromAssembly(context.Assembly)
                 .BasedOn<ApiController>()
                 .If(type => !type.GetTypeInfo().IsGenericTypeDefinition)
-                    .LifestyleTransient()
+                    .LifestyleTransient();
+            context.IocManager.IocContainer.Register(
+                t
                 );
-            //throw new NotImplementedException();
         }
     }
 }

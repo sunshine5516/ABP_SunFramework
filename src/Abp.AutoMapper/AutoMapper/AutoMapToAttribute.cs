@@ -1,8 +1,6 @@
-﻿
-using System;
+﻿using System;
 using AbpFramework.Collections.Extensions;
 using AutoMapper;
-
 namespace Abp.AutoMapper.AutoMapper
 {
     public class AutoMapToAttribute : AutoMapAttributeBase

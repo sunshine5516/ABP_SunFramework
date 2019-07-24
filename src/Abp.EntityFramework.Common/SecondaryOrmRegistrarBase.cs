@@ -27,7 +27,7 @@ namespace Abp.EntityFramework.Common
         {
             AutoRepositoryTypesAttribute autoRepositoryAttr = _dbContextType.GetTypeInfo().GetSingleAttributeOrNull<AutoRepositoryTypesAttribute>()
                                                               ?? defaultRepositoryTypes;
-
+            //var temp = _dbContextEntityFinder.GetEntityTypeInfos(_dbContextType);
             foreach (EntityTypeInfo entityTypeInfo in _dbContextEntityFinder.GetEntityTypeInfos(_dbContextType))
             {
                 Type primaryKeyType = EntityHelper.GetPrimaryKeyType(entityTypeInfo.EntityType);

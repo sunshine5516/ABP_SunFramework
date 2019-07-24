@@ -12,7 +12,10 @@ namespace AbpFramework.Dependency
         {
             return new DisposableDependencyObjectWrapper<T>(iocResolver, iocResolver.Resolve<T>());
         }
-
+        public static IDisposableDependencyObjectWrapper ResolveAsDisposable(this IIocResolver iocResolver, Type type)
+        {
+            return new DisposableDependencyObjectWrapper(iocResolver, iocResolver.Resolve(type));
+        }
         /// <summary>
         /// Gets an <see cref="DisposableDependencyObjectWrapper{T}"/> object that wraps resolved object to be Disposable.
         /// </summary> 
@@ -24,6 +27,12 @@ namespace AbpFramework.Dependency
         {
             return new DisposableDependencyObjectWrapper<T>(iocResolver, (T)iocResolver.Resolve(type));
         }
-
+        public static void Using<T>(this IIocResolver iocResolver,Action<T> action)
+        {
+            using (var wrapper = iocResolver.ResolveAsDisposable<T>())
+            {
+                action(wrapper.Object);
+            }
+        }
     }
 }

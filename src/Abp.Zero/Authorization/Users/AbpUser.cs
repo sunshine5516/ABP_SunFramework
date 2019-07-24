@@ -6,7 +6,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 namespace Abp.Zero.Authorization.Users
 {
     public abstract class AbpUser<TUser> : AbpUserBase, IUser<long>, IFullAudited<TUser>

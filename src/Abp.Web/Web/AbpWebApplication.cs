@@ -1,10 +1,6 @@
 ﻿using AbpFramework;
 using AbpFramework.Modules;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Web;
 
 namespace Abp.Web
@@ -64,7 +60,8 @@ namespace Abp.Web
 
         protected virtual void SetCurrentCulture()
         {
-            //AbpBootstrapper.IocManager.Using<ICurrentCultureSetter>(cultureSetter => cultureSetter.SetCurrentCulture(Context));
+            //AbpBootstrapper.IocManager.Using<ICurrentCultureSetter>
+            //    (cultureSetter => cultureSetter.SetCurrentCulture(Context));
         }
 
     }

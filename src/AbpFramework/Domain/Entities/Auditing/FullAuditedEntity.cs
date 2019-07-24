@@ -1,6 +1,5 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations.Schema;
-
 namespace AbpFramework.Domain.Entities.Auditing
 {
     /// <summary>
