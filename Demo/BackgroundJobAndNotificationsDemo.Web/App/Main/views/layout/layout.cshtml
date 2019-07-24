@@ -1,0 +1,48 @@
+﻿@using System.Threading
+@using System.Web.Optimization
+@using Abp.Web.Mvc.Web.Mvc.Extensions
+@using Abp.Web.Mvc.Web.Mvc.Views
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>BackgroundJobAndNotificationsDemo</title>
+    <link rel="shortcut icon" href="~/favicon.ico">
+    @Styles.Render("~/Bundles/App/vendor/css")
+    @Styles.Render("~/Bundles/App/Main/css")
+    <script type="text/javascript">
+        //This is used to get the application's root path from javascript. It's useful if you're running application in a virtual directory under IIS.
+        var abp = abp || {}; abp.appPath = '@ApplicationPath';
+    </script>
+    @Scripts.Render("~/Bundles/App/vendor/js")
+    <script>
+        //Localizing momentjs
+        moment.locale('@Thread.CurrentThread.CurrentUICulture.Name');
+    </script>
+    <!-- Dynamic scripts of ABP system (They are created on runtime and can not be bundled) -->
+    <script src="~/api/AbpServiceProxies/GetAll"></script>
+    <script src="~/api/AbpServiceProxies/GetAll?type=angular"></script>
+    @*<script src="~/AbpScripts/GetScripts" type="text/javascript"></script>*@
+    <!-- SignalR scripts -->
+    <script src="~/signalr/hubs"></script>
+    @Html.IncludeScript("~/Abp/Framework/scripts/libs/abp.signalr.js")
+    @Scripts.Render("~/Bundles/App/Main/js")
+</head>
+<body>
+    <div ng-app="app">
+        <div ng-controller="app.views.layout as vm">
+            <div ng-include="'/App/Main/views/layout/header.cshtml'"></div>
+            <div class="container">
+                <div class="angular-animation-container row">
+                    <div ui-view class="shuffle-animation col-xs-12"></div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
